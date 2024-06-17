@@ -52,5 +52,5 @@ public class FacturaEntity implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "tipo_pago_id")
-    private TiposPago tiposPago;
+    private TiposPagoEntity tiposPago;
 }

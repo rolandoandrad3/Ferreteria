@@ -13,7 +13,7 @@ import java.io.Serializable;
 @Setter
 @NoArgsConstructor
 
-public class TiposPago implements Serializable {
+public class TiposPagoEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 

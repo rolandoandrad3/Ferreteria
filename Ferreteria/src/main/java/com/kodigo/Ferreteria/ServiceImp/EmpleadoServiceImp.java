@@ -5,8 +5,10 @@ import com.kodigo.Ferreteria.DAO.EmpleadoDao;
 import com.kodigo.Ferreteria.Service.EmpleadoService;
 import com.kodigo.Ferreteria.entity.EmpleadoEntity;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
+@Service
 
 public class EmpleadoServiceImp implements EmpleadoService {
 

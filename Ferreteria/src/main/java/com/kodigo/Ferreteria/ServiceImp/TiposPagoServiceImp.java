@@ -4,8 +4,10 @@ import com.kodigo.Ferreteria.DAO.TiposPagoDao;
 import com.kodigo.Ferreteria.Service.TiposPagoService;
 import com.kodigo.Ferreteria.entity.TiposPagoEntity;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
+@Service
 
 public class TiposPagoServiceImp implements TiposPagoService {
     @Autowired

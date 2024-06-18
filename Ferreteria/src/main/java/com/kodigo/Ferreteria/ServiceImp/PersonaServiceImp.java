@@ -4,8 +4,10 @@ import com.kodigo.Ferreteria.DAO.PersonaDao;
 import com.kodigo.Ferreteria.Service.PersonaService;
 import com.kodigo.Ferreteria.entity.PersonaEntity;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
+@Service
 
 public class PersonaServiceImp implements PersonaService {
     @Autowired

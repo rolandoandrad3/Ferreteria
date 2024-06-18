@@ -4,8 +4,11 @@ import com.kodigo.Ferreteria.DAO.CategoriaDao;
 import com.kodigo.Ferreteria.Service.CategoriaService;
 import com.kodigo.Ferreteria.entity.CategoriaEntity;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
+@Service
+
 
 public class CategoriaServiceImp implements CategoriaService {
     @Autowired

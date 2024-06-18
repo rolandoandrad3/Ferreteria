@@ -4,8 +4,10 @@ import com.kodigo.Ferreteria.DAO.ClientesDao;
 import com.kodigo.Ferreteria.Service.ClienteService;
 import com.kodigo.Ferreteria.entity.ClienteEntity;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
+@Service
 
 public class ClienteServiceImp implements ClienteService {
     @Autowired

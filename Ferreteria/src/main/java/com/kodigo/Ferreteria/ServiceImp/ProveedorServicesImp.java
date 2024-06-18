@@ -4,8 +4,10 @@ import com.kodigo.Ferreteria.DAO.ProveedorDao;
 import com.kodigo.Ferreteria.Service.ProveedorService;
 import com.kodigo.Ferreteria.entity.ProveedorEntity;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
+@Service
 
 public class ProveedorServicesImp implements ProveedorService {
     @Autowired

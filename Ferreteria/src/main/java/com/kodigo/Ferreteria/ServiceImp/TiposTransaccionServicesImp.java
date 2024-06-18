@@ -4,8 +4,10 @@ import com.kodigo.Ferreteria.DAO.TiposTransaccionDao;
 import com.kodigo.Ferreteria.Service.TiposTransaccionService;
 import com.kodigo.Ferreteria.entity.TiposTransaccionEntity;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
+@Service
 
 public class TiposTransaccionServicesImp implements TiposTransaccionService {
     @Autowired

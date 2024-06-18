@@ -4,8 +4,10 @@ import com.kodigo.Ferreteria.DAO.FacturaDao;
 import com.kodigo.Ferreteria.Service.FacturaService;
 import com.kodigo.Ferreteria.entity.FacturaEntity;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
+@Service
 
 public class FacturaServiceImp implements FacturaService {
     @Autowired

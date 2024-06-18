@@ -3,8 +3,10 @@ package com.kodigo.Ferreteria.ServiceImp;
 import com.kodigo.Ferreteria.DAO.PagoDao;
 import com.kodigo.Ferreteria.Service.PagoService;
 import com.kodigo.Ferreteria.entity.PagoEntity;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
+@Service
 
 public class PagoServiceImp implements PagoService {
     private PagoDao pagoDao;

@@ -6,15 +6,13 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
+@Entity
+@Table(name = "tipos_pago")
+@Getter
+@Setter
+@NoArgsConstructor
 
-public class TiposPagoEntity {
-    @Entity
-    @Table(name = "tipos_pago")
-    @Getter
-    @Setter
-    @NoArgsConstructor
-
-    public class TipoPagoEntity implements Serializable {
+public class TiposPagoEntity implements Serializable {
 
         private static final long serialVersionUID = 1L;
 
@@ -24,5 +22,4 @@ public class TiposPagoEntity {
 
         @Column(name = "tipo_pago")
         private String tipoPago;
-    }
 }

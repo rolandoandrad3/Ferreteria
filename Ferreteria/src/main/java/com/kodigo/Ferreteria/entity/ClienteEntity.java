@@ -25,8 +25,6 @@ public class ClienteEntity implements Serializable {
    @Column(name = "fecha_ingreso")
     private LocalDate fechaIngreso;
 
-
-
     @Column(name = "estado")
     private String estado;
 }

@@ -1,5 +1,5 @@
-create database ferreteria
-use ferreteria
+create database ferreteria;
+use ferreteria;
 
 -- Tabla Para la categorias de la Ferreteria 
 CREATE TABLE categorias (
@@ -242,7 +242,6 @@ CREATE TABLE transaccion (
     FOREIGN KEY (tipo_transaccion_id) REFERENCES tipo_transaccion(id)
 );
 
-select * from transaccion
 INSERT INTO transaccion (fecha, monto, cliente_id, factura_id, pago_id, producto_id, categoria_id, proveedor_id, empleado_id, persona_id, tipos_pago_id, tipo_transaccion_id)
 VALUES
 ('2024-06-01', 100.0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
@@ -250,6 +249,16 @@ VALUES
 ('2024-06-03', 200.0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3),
 ('2024-06-04', 120.0, 4, 4, 4, 4, 4, 1, 2, 4, 4, 4),
 ('2024-06-05', 180.0, 5, 5, 5, 5, 5, 2, 3, 5, 5, 5);
+
+select * from transaccion;
+select * from categorias;
+select * from cliente;
+select * from detalle_factura;
+select * from empleado;
+select* from pago;
+select * from persona;
+select * from productos;
+select * from tipos_pago;
 
 
 

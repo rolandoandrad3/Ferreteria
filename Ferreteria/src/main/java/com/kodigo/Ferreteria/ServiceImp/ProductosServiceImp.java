@@ -3,10 +3,14 @@ package com.kodigo.Ferreteria.ServiceImp;
 import com.kodigo.Ferreteria.DAO.ProductosDao;
 import com.kodigo.Ferreteria.Service.ProductosService;
 import com.kodigo.Ferreteria.entity.ProductosEntity;
+import jakarta.persistence.EntityNotFoundException;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+
 @Service
 
 public class ProductosServiceImp implements ProductosService {
@@ -23,11 +27,24 @@ public class ProductosServiceImp implements ProductosService {
     }
 
     @Override
-    public ProductosEntity updateProductos(ProductosEntity productosEntity) {
-        return null;
+    @Transactional
+    public ProductosEntity updateProductos(ProductosEntity productoEntity) {
+        Optional<ProductosEntity> optionalProducto = productosDao.findById(productoEntity.getId());
+        if (optionalProducto.isPresent()) {
+            ProductosEntity existingProducto = optionalProducto.get();
+            existingProducto.setNombreProducto(productoEntity.getNombreProducto());
+            existingProducto.setDescripcion(productoEntity.getDescripcion());
+            existingProducto.setCantidad(productoEntity.getCantidad());
+            existingProducto.setPrecio(productoEntity.getPrecio());
+            existingProducto.setFecha(productoEntity.getFecha());
+            existingProducto.setCategoria(productoEntity.getCategoria());
+            return productosDao.save(existingProducto);
+        } else {
+            throw new EntityNotFoundException("El producto con id " + productoEntity.getId() + " no existe.");
+        }
     }
 
     @Override
-    public void deleteProductos(Integer id) {productosDao.deleteById(id);
+    public void deleteProductos(Long id) {productosDao.deleteById(id);
     }
 }

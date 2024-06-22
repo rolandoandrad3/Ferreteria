@@ -8,5 +8,5 @@ public interface ProductosService {
     public List<ProductosEntity> listProductos();
     public ProductosEntity createProductos(ProductosEntity productosEntity);
     public ProductosEntity updateProductos(ProductosEntity productosEntity);
-    public void deleteProductos(Integer id);
+    public void deleteProductos(Long id);
 }

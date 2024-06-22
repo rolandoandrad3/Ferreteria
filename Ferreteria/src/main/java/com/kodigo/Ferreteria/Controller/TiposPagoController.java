@@ -35,7 +35,6 @@ public class TiposPagoController {
             return ResponseEntity.notFound().build();
         }
     }
-
     @DeleteMapping("/deleteTipoPago/{id}")
     public ResponseEntity<Void> deleteTiposPago(@PathVariable Long id) {
         tiposPagoService.deleteTiposPago(Math.toIntExact(id));

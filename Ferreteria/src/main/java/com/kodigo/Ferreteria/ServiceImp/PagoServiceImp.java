@@ -3,9 +3,12 @@ package com.kodigo.Ferreteria.ServiceImp;
 import com.kodigo.Ferreteria.DAO.PagoDao;
 import com.kodigo.Ferreteria.Service.PagoService;
 import com.kodigo.Ferreteria.entity.PagoEntity;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+
 @Service
 
 public class PagoServiceImp implements PagoService {
@@ -22,7 +25,17 @@ public class PagoServiceImp implements PagoService {
 
     @Override
     public PagoEntity updatePago(PagoEntity pagoEntity) {
-        return null;
+        Optional<PagoEntity> optionalPago = pagoDao.findById(Math.toIntExact(pagoEntity.getId()));
+        if (optionalPago.isPresent()) {
+            PagoEntity existingPago = optionalPago.get();
+            existingPago.setMonto(pagoEntity.getMonto());
+            existingPago.setFechaPago(pagoEntity.getFechaPago());
+            existingPago.setFactura(pagoEntity.getFactura());
+            existingPago.setTiposPago(pagoEntity.getTiposPago());
+            return pagoDao.save(existingPago);
+        } else {
+            throw new EntityNotFoundException("El pago con id " + pagoEntity.getId() + " no existe.");
+        }
     }
 
     @Override

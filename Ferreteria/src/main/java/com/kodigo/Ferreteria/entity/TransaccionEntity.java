@@ -57,7 +57,6 @@ public class TransaccionEntity implements Serializable {
     @JoinColumn(name = "tipos_pago_id")
     private TiposPagoEntity tiposPagoEntity;
 
-
     //Tipos de transacciones son compra, venta, devolucion, etc
     @ManyToOne
     @JoinColumn(name = "tipos_transaccion_id")

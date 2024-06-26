@@ -1,11 +1,17 @@
 package com.kodigo.Ferreteria.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.io.Serializable;
 
 @Entity
 @Table(name ="transaccion")
+@Getter
+@Setter
+@NoArgsConstructor
 
 public class TransaccionEntity implements Serializable {
 

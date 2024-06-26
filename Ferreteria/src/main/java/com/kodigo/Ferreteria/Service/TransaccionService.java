@@ -7,6 +7,6 @@ import java.util.List;
 public interface TransaccionService {
     public List<TransaccionEntity> listTransaccion();
     public TransaccionEntity createTransaccion(TransaccionEntity transaccionEntity);
-    public TransaccionEntity updateTransaccion();
-    public void deleteTransaccion(Integer id);
+    public TransaccionEntity updateTransaccion(TransaccionEntity transaccionEntity);
+    public void deleteTransaccion(Long id);
 }

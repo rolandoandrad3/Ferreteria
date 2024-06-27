@@ -47,4 +47,19 @@ public class ProductosServiceImp implements ProductosService {
     @Override
     public void deleteProductos(Long id) {productosDao.deleteById(id);
     }
+    @Override
+    public List<ProductosEntity> findByNombre(String nombre) {
+        return productosDao.findByNombre(nombre);
+    }
+
+    @Override
+    public List<ProductosEntity> findByCategoriaId(Long categoriaId) {
+        return productosDao.findByCategoriaId(categoriaId);
+    }
+
+    @Override
+    public List<ProductosEntity> findByPrecioGreaterThan(Double precio) {
+        return productosDao.findByPrecioGreaterThan(precio);
+    }
+
 }

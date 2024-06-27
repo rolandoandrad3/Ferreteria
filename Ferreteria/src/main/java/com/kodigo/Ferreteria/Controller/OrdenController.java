@@ -14,7 +14,7 @@ public class OrdenController {
     @Autowired
     private OrdenService ordenService;
 
-    @GetMapping
+    @GetMapping("/listOrdenes")
     public List<OrdenEntity> findAll() {
         return ordenService.findAll();
     }
@@ -52,5 +52,23 @@ public class OrdenController {
         }
         ordenService.deleteById(id);
         return ResponseEntity.noContent().build();
+    }
+
+    // Buscar por fecha
+    @GetMapping("/buscarFecha/{fecha}")
+    public List<OrdenEntity> findByFecha(@PathVariable String fecha) {
+        return ordenService.findByFecha(fecha);
+    }
+
+    // Buscar por empleado
+    @GetMapping("/empleado/{empleadoId}")
+    public List<OrdenEntity> findByEmpleado(@PathVariable Long empleadoId) {
+        return ordenService.findByEmpleado(empleadoId);
+    }
+
+    // Buscar por categoría de producto
+    @GetMapping("/categoria/{categoriaId}")
+    public List<OrdenEntity> findByCategoriaProducto(@PathVariable Long categoriaId) {
+        return ordenService.findByCategoriaProducto(categoriaId);
     }
 }

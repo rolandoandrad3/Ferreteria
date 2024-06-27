@@ -53,4 +53,6 @@ public class TransaccionServicesImp implements TransaccionService {
     public void deleteTransaccion(Long id) {
         transaccionDao.deleteById(Math.toIntExact(id));
     }
+
+
 }

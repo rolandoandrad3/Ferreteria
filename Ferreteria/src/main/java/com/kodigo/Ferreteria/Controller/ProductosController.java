@@ -15,17 +15,17 @@ public class ProductosController {
 
     @Autowired
     private ProductosService productosService;
-    @GetMapping
+    @GetMapping("/listProductos")
     public List<ProductosEntity> listAllProductos() {
         return productosService.listProductos();
     }
 
-    @PostMapping
+    @PostMapping("/createProducto")
     public ProductosEntity createProducto(@RequestBody ProductosEntity productoEntity) {
         return productosService.createProductos(productoEntity);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("updateProducto/{id}")
     public ResponseEntity<ProductosEntity> updateProducto(@PathVariable Long id, @RequestBody ProductosEntity productoEntity) {
         productoEntity.setId(id);
         try {
@@ -36,9 +36,28 @@ public class ProductosController {
         }
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("deleteProducto/{id}")
     public ResponseEntity<Void> deleteProducto(@PathVariable Long id) {
         productosService.deleteProductos(id);
         return ResponseEntity.noContent().build();
     }
+
+    // Buscar por nombre del producto
+    @GetMapping("/nombre/{nombre}")
+    public List<ProductosEntity> findByNombre(@PathVariable String nombre) {
+        return productosService.findByNombre(nombre);
+    }
+
+    // Buscar por categoría del producto
+    @GetMapping("/categoria/{categoriaId}")
+    public List<ProductosEntity> findByCategoriaId(@PathVariable Long categoriaId) {
+        return productosService.findByCategoriaId(categoriaId);
+    }
+
+    // Buscar por precio mayor a un valor específico
+    @GetMapping("/precio/{precio}")
+    public List<ProductosEntity> findByPrecioGreaterThan(@PathVariable Double precio) {
+        return productosService.findByPrecioGreaterThan(precio);
+    }
+
 }

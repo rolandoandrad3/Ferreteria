@@ -21,8 +21,8 @@ public class TiposTransaccionController {
         return tiposTransaccionService.listTiposTransaccion();
     }
 
-    @PostMapping("/createTipoTransaccion/{transaccion}")
-    public TiposTransaccionEntity createTiposTransaccion(@PathVariable TiposTransaccionEntity transaccion) {
+    @PostMapping("/createTipoTransaccion")
+    public TiposTransaccionEntity createTiposTransaccion(@RequestBody TiposTransaccionEntity transaccion) {
         return tiposTransaccionService.createTiposTransaccion(transaccion);
     }
 

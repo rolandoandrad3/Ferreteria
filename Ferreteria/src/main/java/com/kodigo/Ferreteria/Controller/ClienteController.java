@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -44,4 +45,15 @@ public class ClienteController {
     @DeleteMapping("/deleteCliente/{id}")//http://localhost:8080/cliente/deleteCliente/6
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteCliente(@PathVariable Integer id){clienteService.deleteCliente(id);}
+
+    @GetMapping("/estado/{estado}")
+    public List<ClienteEntity> findByEstado(@PathVariable String estado) {
+        return clienteService.findByEstado(estado);
+    }
+
+    // Buscar por fecha de ingreso
+    @GetMapping("/fechaIngreso/{fechaIngreso}")
+    public List<ClienteEntity> findByFechaIngreso(@PathVariable LocalDate fechaIngreso) {
+        return clienteService.findByFechaIngreso(fechaIngreso);
+    }
 }

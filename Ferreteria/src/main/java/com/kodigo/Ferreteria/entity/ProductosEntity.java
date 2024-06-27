@@ -35,7 +35,7 @@ public class ProductosEntity implements Serializable {
     private LocalDate fecha;
 
     @ManyToOne
-    @JoinColumn(name = "categoria_id")
+    @JoinColumn(name = "categorias_id")
     private CategoriaEntity categoria;
 
 

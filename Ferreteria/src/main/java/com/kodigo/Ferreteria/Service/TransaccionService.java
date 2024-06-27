@@ -9,4 +9,6 @@ public interface TransaccionService {
     public TransaccionEntity createTransaccion(TransaccionEntity transaccionEntity);
     public TransaccionEntity updateTransaccion(TransaccionEntity transaccionEntity);
     public void deleteTransaccion(Long id);
+
+
 }

@@ -9,4 +9,6 @@ public interface PagoService {
     public PagoEntity createPago(PagoEntity pagoEntity);
     public PagoEntity updatePago(PagoEntity pagoEntity);
     public void deletePago(Integer id);
+
+
 }

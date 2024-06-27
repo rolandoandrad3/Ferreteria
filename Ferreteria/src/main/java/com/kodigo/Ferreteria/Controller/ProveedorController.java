@@ -15,17 +15,17 @@ public class ProveedorController {
 
     @Autowired
     private ProveedorService proveedorService;
-    @GetMapping("/listProveedores")
+    @GetMapping("/listProveedores") //http://localhost:8080/proveedor/listProveedores
     public List<ProveedorEntity> listAllProveedores() {
         return proveedorService.listProveedor();
     }
 
-    @PostMapping
+    @PostMapping("/createProveedor") //http://localhost:8080/proveedor
     public ProveedorEntity createProveedor(@RequestBody ProveedorEntity proveedorEntity) {
         return proveedorService.createProveedor(proveedorEntity);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/updateProveedor/{id}") //http://localhost:8080/proveedor/updateProveedor/6
     public ResponseEntity<ProveedorEntity> updateProveedor(@PathVariable Long id, @RequestBody ProveedorEntity proveedorEntity) {
         proveedorEntity.setId(id);
         try {
@@ -36,7 +36,7 @@ public class ProveedorController {
         }
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}") //http://localhost:8080/proveedor/delete/6
     public ResponseEntity<Void> deleteProveedor(@PathVariable Long id) {
         proveedorService.deleteProveedor(Math.toIntExact(id));
         return ResponseEntity.noContent().build();

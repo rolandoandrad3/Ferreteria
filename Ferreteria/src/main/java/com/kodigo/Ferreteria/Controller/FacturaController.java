@@ -16,17 +16,17 @@ public class FacturaController {
     @Autowired
     private FacturaService facturaService;
 
-    @GetMapping
+    @GetMapping("/listFacturas")
     public List<FacturaEntity> listAllFacturas() {
         return facturaService.listFactura();
     }
 
-    @PostMapping
+    @PostMapping("/createFactura")
     public FacturaEntity createFactura(@RequestBody FacturaEntity facturaEntity) {
         return facturaService.createFactura(facturaEntity);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/updateFactura/{id}")
     public ResponseEntity<FacturaEntity> updateFactura(@PathVariable Long id, @RequestBody FacturaEntity facturaEntity) {
         facturaEntity.setId(id);
         try {
@@ -37,7 +37,7 @@ public class FacturaController {
         }
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/deleteFactura/{id}")
     public ResponseEntity<Void> deleteFactura(@PathVariable Long id) {
         facturaService.deleteFactura(Math.toIntExact(id));
         return ResponseEntity.noContent().build();

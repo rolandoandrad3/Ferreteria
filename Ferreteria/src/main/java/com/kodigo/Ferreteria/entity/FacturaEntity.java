@@ -39,7 +39,7 @@ public class FacturaEntity implements Serializable {
     private EmpleadoEntity empleado;
 
     @ManyToOne
-    @JoinColumn(name = "producto_id")
+    @JoinColumn(name = "productos_id")
     private ProductosEntity producto;
 
     @ManyToOne
@@ -53,4 +53,5 @@ public class FacturaEntity implements Serializable {
     @ManyToOne
     @JoinColumn(name = "tipo_pago_id")
     private TiposPagoEntity tiposPago;
+
 }

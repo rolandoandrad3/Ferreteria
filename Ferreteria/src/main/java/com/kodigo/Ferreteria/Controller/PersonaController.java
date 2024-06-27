@@ -16,17 +16,17 @@ public class PersonaController {
     @Autowired
     private PersonaService personaService;
 
-    @GetMapping
+    @GetMapping("/listPersonas") //http://localhost:8080/personas/listPersonas
     public List<PersonaEntity> listarPersonas() {
         return personaService.listarPersonas();
     }
 
-    @PostMapping
+    @PostMapping("/addPersona") //http://localhost:8080/personas/addPersona
     public PersonaEntity createPersona(@RequestBody PersonaEntity personaEntity) {
         return personaService.createPersona(personaEntity);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("updatePersona/{id}") //http://localhost:8080/personas/updatePersona/6
     public ResponseEntity<PersonaEntity> updatePersona(@PathVariable Long id, @RequestBody PersonaEntity personaEntity) {
         personaEntity.setId(id);
         try {
@@ -37,7 +37,7 @@ public class PersonaController {
         }
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("deletePersona/{id}") //http://localhost:8080/personas/deletePersona/6
     public ResponseEntity<Void> deletePersona(@PathVariable Long id) {
         personaService.deletePersona(Math.toIntExact(id));
         return ResponseEntity.noContent().build();

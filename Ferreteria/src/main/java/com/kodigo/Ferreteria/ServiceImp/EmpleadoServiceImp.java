@@ -10,6 +10,7 @@ import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -61,6 +62,25 @@ public class EmpleadoServiceImp implements EmpleadoService {
 
     @Override
     public void deleteEmpleado(Integer id) { empleadoDao.deleteById(id);
+    }
 
+    @Override
+    public List<EmpleadoEntity> findByApellido(String apellido) {
+        return empleadoDao.findByApellido(apellido);
+    }
+
+    @Override
+    public List<EmpleadoEntity> findByDui(String dui) {
+        return empleadoDao.findByDui(dui);
+    }
+
+    @Override
+    public List<EmpleadoEntity> findByFechaContratacion(LocalDate fechaContratacion) {
+        return empleadoDao.findByFechaContratacion(fechaContratacion);
+    }
+
+    @Override
+    public List<EmpleadoEntity> findByCargo(String cargo) {
+        return empleadoDao.findByCargo(cargo);
     }
 }

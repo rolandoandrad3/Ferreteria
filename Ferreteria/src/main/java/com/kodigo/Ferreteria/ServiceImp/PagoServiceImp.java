@@ -4,6 +4,7 @@ import com.kodigo.Ferreteria.DAO.PagoDao;
 import com.kodigo.Ferreteria.Service.PagoService;
 import com.kodigo.Ferreteria.entity.PagoEntity;
 import jakarta.persistence.EntityNotFoundException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,6 +13,7 @@ import java.util.Optional;
 @Service
 
 public class PagoServiceImp implements PagoService {
+    @Autowired
     private PagoDao pagoDao;
     @Override
     public List<PagoEntity> listPago() {

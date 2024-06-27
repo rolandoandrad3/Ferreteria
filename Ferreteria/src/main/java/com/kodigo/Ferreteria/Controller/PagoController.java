@@ -20,8 +20,8 @@ public class PagoController {
         return pagoService.listPago();
     }
 
-    @PostMapping("/createPago/{pago}")
-    public PagoEntity createPago(@PathVariable PagoEntity pago) {
+    @PostMapping("/createPago")
+    public PagoEntity createPago(@RequestBody PagoEntity pago) {
         return pagoService.createPago(pago);
     }
 

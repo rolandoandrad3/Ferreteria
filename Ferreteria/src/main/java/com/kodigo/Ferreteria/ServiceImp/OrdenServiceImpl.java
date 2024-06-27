@@ -41,4 +41,21 @@ public class OrdenServiceImpl implements OrdenService {
     public void deleteById(Integer id) { ordenDao.deleteById(Long.valueOf(id));
 
     }
+
+    // Implementación de los nuevos métodos de búsqueda
+
+    @Override
+    public List<OrdenEntity> findByFecha(String fecha) {
+        return ordenDao.findByFecha(fecha);
+    }
+
+    @Override
+    public List<OrdenEntity> findByEmpleado(Long empleadoId) {
+        return ordenDao.findByEmpleadoId(empleadoId);
+    }
+
+    @Override
+    public List<OrdenEntity> findByCategoriaProducto(Long categoriaId) {
+        return ordenDao.findByCategoriaProducto(categoriaId);
+    }
 }

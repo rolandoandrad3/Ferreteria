@@ -29,7 +29,7 @@ public class CategoriaController {
         return categoriaService.creatCategoria(categoria);
     }
 
-    @PutMapping("/{id}") //http://localhost:8080/categoria/7
+    @PutMapping("/updateCategoria/{id}") //http://localhost:8080/categoria/7
     public ResponseEntity<CategoriaEntity> updateCategoria(@PathVariable Long id, @RequestBody CategoriaEntity categoriaEntity) {
         categoriaEntity.setId(id);
         try {

@@ -18,7 +18,7 @@ public class DetalleFacturaController {
     @Autowired
     private DetalleFacturaService detalleFacturaService;
 
-    @GetMapping("/listFacturas") //http://localhost:8080/cliente/listCliente
+    @GetMapping("/listDetalleFacturas") //http://localhost:8080/detalleFactura/listFacturas
     public List<DetalleFacturaEntity> listDetalleFactura(){
         return detalleFacturaService.listDetalleFactura();
     }
@@ -30,7 +30,7 @@ public class DetalleFacturaController {
     {
         return detalleFacturaService.createDetalleFactura(detalleFactura);
     }
-    @PutMapping("/{id}")
+    @PutMapping("/updateDetalleFactura/{id}") //http://localhost:8080/detalleFactura/updateDetalleFactura/16
     public ResponseEntity<DetalleFacturaEntity> updateDetalleFactura(@PathVariable Long id, @RequestBody DetalleFacturaEntity detalleFacturaEntity) {
         detalleFacturaEntity.setId(id);
         try {
@@ -41,7 +41,7 @@ public class DetalleFacturaController {
         }
     }
 
-    @DeleteMapping("/deleteFactura/{id}")//http://localhost:8080/cliente/deleteCliente/6
+    @DeleteMapping("/deleteFactura/{id}")//http://localhost:8080/detalleFactura/deleteFactura/16
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteDetalleFactura(@PathVariable Integer id){detalleFacturaService.deleteDetalleFactura(id);}
 }
